@@ -12,7 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'brewery_db'
 
 group :development, :test do
-	gem 'sqlite3', '1.3.8'
+	gem 'pg'
 	gem 'rspec-rails', '2.13.1'
 end
 
