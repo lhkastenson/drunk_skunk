@@ -1,23 +1,29 @@
 development:
   adapter: postgresql
+  host: web443.webfaction.com
+  port: 5432
   encoding: utf8
-  database: project_development
+  database: drunkskunkdb
   pool: 5
-  username: 
-  password:
+  username: lhkastenson
+  password: Xtpg1946!
 
 test: &TEST
   adapter: postgresql
+  host: web443.webfaction.com
+  port: 5432
   encoding: utf8
-  database: project_test
+  database: drunkskunkdb
   pool: 5
-  username: 
-  password:
+  username: lhkastenson
+  password: Xtpg1946!
 
 production:
   adapter: postgresql
+  host: web443.webfaction.com
+  port: 5432
   encoding: utf8
-  database: project_production
+  database: drunkskunkdb
   pool: 5
-  username: 
-  password:
+  username: lhkastenson
+  password: Xtpg1946!
