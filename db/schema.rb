@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708010035) do
+ActiveRecord::Schema.define(version: 20140712020647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,46 @@ ActiveRecord::Schema.define(version: 20140708010035) do
   create_table "beers", force: true do |t|
     t.string   "name"
     t.string   "style"
-    t.integer  "abv"
     t.integer  "ibu"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "beerId"
+    t.text     "description"
+    t.float    "abv"
+    t.string   "foodPairings"
+    t.float    "originalGravity"
+    t.integer  "glasswareId"
+    t.integer  "styleId"
+    t.boolean  "isOrganic"
+    t.float    "servingTemperature"
+    t.integer  "status"
+    t.string   "statusDisplay"
+    t.string   "beerVariationId"
+    t.integer  "year"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "styles", force: true do |t|
+    t.string   "styleId"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "categoryId"
+    t.string   "category"
+    t.integer  "ibuMin"
+    t.integer  "ibuMax"
+    t.float    "abvMin"
+    t.float    "abvMax"
+    t.integer  "srmMin"
+    t.integer  "srmMax"
+    t.float    "ogMin"
+    t.float    "ogMax"
+    t.float    "fgMin"
+    t.float    "fgMax"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
