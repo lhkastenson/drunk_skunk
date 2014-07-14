@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'brewery_db'
 gem 'therubyracer'
+gem 'd3-rails'
 
 group :development, :test do
 	gem 'pg'
