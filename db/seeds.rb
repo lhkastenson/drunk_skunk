@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 $brewery_db.styles.all.each do |style|
-	Style.create(styleId: style.id, name: style.name, categoryId: style.categoryId, category: style.category.name, ibuMin: style.ibuMin, ibuMax: style.ibuMax, abvMin: style.abvMin, abvMax: style.abvMax, srmMin: style.srmMin, srmMax: style.srmMax, ogMin: style.ogMin, ogMax: style.ogMax, fgMin: style.fgMin, fgMax: style.fgMax)
+	Style.create(styleId: style.id, name: style.name, categoryId: style.categoryId, category: style.category.name, ibuMin: style.ibuMin, ibuMax: style.ibuMax, abvMin: style.abvMin, abvMax: style.abvMax, srmMin: style.srmMin, srmMax: style.srmMax, ogMin: style.ogMin, ogMax: style.ogMax, fgMin: style.fgMin, fgMax: style.fgMax, description: style.description)
 end
 
 page = 1
