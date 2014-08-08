@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Beer do
-  before { @beer = Beer.new(name: "Sword Iron Swan", style: "Classic English-Style Pale Ale", ibu: 56, created_at: "2014-07-14 04:07:32", updated_at: "2014-07-14 04:07:32", beerId: "rz4EbJ", description: "Our newest canned offering is a tribute to the song...", abv: 5.5, foodPairings: nil, originalGravity: nil, glasswareId: nil, styleId: 1, isOrganic: false, servingTemperature: nil, status: 0, statusDisplay: nil, beerVariationId: nil, year: nil) }
+  before { @beer = Beer.new(name: "Sword Iron Swan", style: "Classic English-Style Pale Ale", ibu: 56, created_at: "2014-07-14 04:07:32", updated_at: "2014-07-14 04:07:32", beerId: "rz4EbJ", description: "Our newest canned offering is a tribute to the song...", abv: 5.5, foodPairings: nil, originalGravity: 1.01, glasswareId: nil, styleId: 1, isOrganic: false, servingTemperature: nil, status: 0, statusDisplay: nil, beerVariationId: nil, year: nil) }
 
   subject { @beer }
 
@@ -45,22 +45,17 @@ describe Beer do
   end
 
   describe "when ibu is negative" do
-    before { @beer.ibu < 0 }
+    before { @beer.ibu = -1 }
     it { should_not be_valid }
   end
 
   describe "when abv is negative" do
-    before { @beer.abv < 0 }
+    before { @beer.abv = -1 }
     it { should_not be_valid }
   end
 
   describe "when originalGravity is negative" do
-    before { @beer.originalGravity < 0 }
-    it { should_not be_valid }
-  end
-
-  describe "when styleId is not valid" do
-    before { !Style.exists?(@beer.styleId) }
+    before { @beer.originalGravity = -1 }
     it { should_not be_valid }
   end
 

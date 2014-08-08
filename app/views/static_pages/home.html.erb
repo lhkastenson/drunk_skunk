@@ -5,11 +5,13 @@
 	  <a href="http://brew.lonkastenson.com">Drunk Skunk</a>
 	  sample application.
 	</p>
-  <%= link_to "View list of beers!", all_beers_path, class: "btn btn-large btn-primary" %>
-
-  <em>In progress...</em>
-  <%= link_to "Add a new beer!", create_beer_path, class: "btn btn-large btn-danger" %>
-
+	<p>
+  <%= link_to "View list of beers!", beers_path, class: "btn btn-large btn-primary" %>
+  </p>
+  <p>
+	  <em>In progress...</em>
+	  <%= link_to "Add a new beer!", create_beer_path, class: "btn btn-large btn-danger" %>
+  </p>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
