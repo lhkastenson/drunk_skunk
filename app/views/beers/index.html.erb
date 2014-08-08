@@ -1,0 +1,18 @@
+<% provide(:title, 'All beers') %>
+<h1>All beers</h1>
+
+<%= will_paginate %>
+
+<ul class="beers">
+  <% @beers.each do |beer| %>
+    <li>
+			Name: <a href="/beers/<%= beer.beerId %>"><%= beer.name %> </a><br />
+			Style: <% Style.find_by(styleId: beer.styleId.to_s ) %>
+			Description: <%= beer.description %> <br />
+			ABV: <%= beer.abv %>% <br />
+			IBU: <%= beer.ibu %> <br />
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
