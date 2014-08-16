@@ -11,10 +11,21 @@ end
 
 Style.all.each do |style|
   $brewery_db.beers.all(styleId: style.styleId).each do |beer|
-    Beer.create( beerId: beer.id, styleId: beer.styleId, isOrganic: (beer.isOrganic == 'Y'), glasswareId: beer.glasswareId, status: beer.status, name: beer.name, description: beer.description, abv: beer.abv, ibu: beer.ibu, year: beer.year)
+    Labels.create( beerId: beer.id, small: beer.labels, isOrganic: (beer.isOrganic == 'Y'), glasswareId: beer.glasswareId, status: beer.status, name: beer.name, description: beer.description, abv: beer.abv, ibu: beer.ibu, year: beer.year)
   end
 end
 
 $brewery_db.categories.all.each do |category|
 	Category.create(categoryId: category.id, name: category.name)
+end
+
+
+beer.each do |attr|
+if attr[0] == 'labels' then
+attr.each do |label|
+icon = label['icon']
+medium = label['medium']
+large = label['large']
+end
+  end
 end
