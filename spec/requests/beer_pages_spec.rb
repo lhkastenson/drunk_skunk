@@ -30,4 +30,36 @@ describe "Beer pages" do
     	it { should have_content('IBU:') }
     end
   end
+
+  describe "index" do
+    let (:beers) {[Beer.where(styleId: 1).first, 
+                   Beer.where(styleId: 1).second,
+                   Beer.where(styleId: 1).third]}
+    
+    before { visit all_beers_path }
+
+    describe "page" do
+      it { should have_title(full_title('All beers')) }
+      it { should have_content('Name:') }
+      it { should have_content(beers[0].name) }
+      it { should have_content(beers[1].name) }
+      it { should have_content(beers[2].name) }
+      it { should have_content('Style:') }
+      it { should have_content(beers[0].style) }
+      it { should have_content(beers[1].style) }
+      it { should have_content(beers[2].style) }
+      it { should have_content('Description:')}
+      it { should have_content(beers[0].description) }
+      it { should have_content(beers[1].description) }
+      it { should have_content(beers[2].description) }
+      it { should have_content('IBU:') }
+      it { should have_content(beers[0].ibu) }
+      it { should have_content(beers[1].ibu) }
+      it { should have_content(beers[2].ibu) }
+      it { should have_content('ABV:') }
+      it { should have_content(beers[0].abv) }
+      it { should have_content(beers[1].abv) }
+      it { should have_content(beers[2].abv) }
+    end
+  end
 end
