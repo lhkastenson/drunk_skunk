@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803212502) do
+ActiveRecord::Schema.define(version: 20140818004848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,64 @@ ActiveRecord::Schema.define(version: 20140803212502) do
     t.integer  "categoryId"
   end
 
+  create_table "fermentables", force: true do |t|
+    t.integer  "fermentableId"
+    t.string   "name"
+    t.text     "description"
+    t.string   "countryOfOrigin"
+    t.integer  "srmId"
+    t.integer  "srmPrecise"
+    t.float    "moistureContent"
+    t.float    "coarseFineDifference"
+    t.float    "diastaticPower"
+    t.float    "dryYield"
+    t.float    "potential"
+    t.float    "protein"
+    t.float    "solubleNitrogenRatio"
+    t.integer  "maxInBatch"
+    t.boolean  "requiresMashing"
+    t.string   "category"
+    t.string   "categoryDisplay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hops", force: true do |t|
+    t.integer  "hopId"
+    t.string   "name"
+    t.text     "description"
+    t.string   "countryOfOrigin"
+    t.float    "alphaAcidMin"
+    t.float    "alphaAcidMax"
+    t.float    "betaAcidMin"
+    t.float    "betaAcidMax"
+    t.float    "humuleneMin"
+    t.float    "humuleneMax"
+    t.float    "caryophylleneMin"
+    t.float    "caryophylleneMax"
+    t.float    "cohumuloneMin"
+    t.float    "cohumuloneMax"
+    t.float    "myrceneMin"
+    t.float    "myrceneMax"
+    t.float    "farneseneMin"
+    t.float    "farneseneMax"
+    t.boolean  "isNoble"
+    t.boolean  "forBittering"
+    t.boolean  "forFlavor"
+    t.boolean  "forAroma"
+    t.string   "category"
+    t.string   "categoryDisplay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "labels", force: true do |t|
+    t.string "beerId"
+    t.string "small"
+    t.string "medium"
+    t.string "large"
+  end
+
   create_table "styles", force: true do |t|
     t.string   "styleId"
     t.string   "name"
@@ -62,6 +120,26 @@ ActiveRecord::Schema.define(version: 20140803212502) do
     t.float    "fgMax"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "yeasts", force: true do |t|
+    t.integer  "yeastId"
+    t.string   "name"
+    t.text     "description"
+    t.float    "attenuationMin"
+    t.float    "attenuationMax"
+    t.float    "fermentTempMin"
+    t.float    "fermentTempMax"
+    t.float    "alcoholToleranceMin"
+    t.float    "alcoholToleranceMax"
+    t.string   "productId"
+    t.string   "yeastFormat"
+    t.string   "category"
+    t.string   "categoryDisplay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "yeastType"
+    t.string   "supplier"
   end
 
 end
