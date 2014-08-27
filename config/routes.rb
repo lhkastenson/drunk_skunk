@@ -1,12 +1,12 @@
 DrunkSkunk::Application.routes.draw do
   get "styles/new"
-  resources :beers
+  resources :beers, :styles
   root  'static_pages#home'
   match '/create_beer',  to: 'beers#new',            via: 'get'
   match '/all_beers',    to: 'beers#index',          via: 'get'
   match '/show_beer',    to: 'beers#show',           via: 'get'
-  match '/all_styles'    to: 'styles#index'          via: 'get'
-  match '/show_style'    to: 'styles#show'           via: 'get'
+  match '/all_styles',   to: 'styles#index',         via: 'get'
+  match '/show_style',   to: 'styles#show',          via: 'get'
   match '/help',         to: 'static_pages#help',    via: 'get'
   match '/about',        to: 'static_pages#about',   via: 'get'
   match '/contact',      to: 'static_pages#contact', via: 'get'

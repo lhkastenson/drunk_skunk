@@ -1,1 +1,26 @@
+<% provide(:title, 'All Styles') %>
 <h1>All Styles</h1>
+
+<%= will_paginate %>
+
+<ul class="styles">
+	<%= @styles.each do |style| %>
+	<li>
+		Name: <a href="/styles/<%= style.styleId %>"><%= style.name %> </a> <br />
+		Description: <%= style.description %> <br />
+		Category: <%= style.category %> <br />
+		ABV Min: <%= style.abvMin %>% <br />
+		ABV Max: <%= style.abvMax %> <br />
+		IBU Min: <%= style.ibuMin %> <br />
+		IBU Max: <%= style.ibuMax %> <br />
+		SRM Min: <%= style.srmMin %> <br />
+		SRM Max: <%= style.srmMax %> <br />
+		Original Gravity Min: <%= style.ogMin %> <br />
+		Original Gravity Max: <%= style.ogMax %> <br />
+		Final Gravity Min: <%= style.fgMin %> <br />
+		Final Gravity Max: <%= style.fgMax %> <br />
+	</li>
+	<% end %>
+</ul>
+
+<% will_paginate %>
