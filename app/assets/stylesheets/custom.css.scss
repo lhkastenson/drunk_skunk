@@ -118,9 +118,9 @@ input {
   height: auto !important;
 }
 
-/* Users index */
+/* Beers index */
 
-.beers .styles {
+.beers {
   list-style: none;
   margin: 0;
   li {
@@ -133,7 +133,21 @@ input {
   }
 }
 
-/* Style Page */
+/* Style index */
+.styles {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+/* Style show */
 .bullet { font: 10px sans-serif; }
 .bullet .marker { stroke: #000; stroke-width: 2px; }
 .bullet .tick line { stroke: #666; stroke-width: .5px; }

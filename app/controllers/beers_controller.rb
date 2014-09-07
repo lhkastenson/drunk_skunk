@@ -26,7 +26,7 @@ class BeersController < ApplicationController
   end
 
   private
-      def beer_params
+    def beer_params
       params.require(:beer).permit(:name, :styleId)
     end
 end
