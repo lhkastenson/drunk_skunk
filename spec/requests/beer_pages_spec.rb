@@ -25,6 +25,7 @@ describe "Beer pages" do
     	it { should have_content('Description:') }
     	it { should have_content('ABV:') }
     	it { should have_content('IBU:') }
+      it { should have_selector('img') }
     end
   end
 
@@ -47,6 +48,7 @@ describe "Beer pages" do
       it { should have_content('Description:')}
       it { should have_content('IBU:') }
       it { should have_content('ABV:') }
+      it { should have_selector('img') }
     end
   end
 end
