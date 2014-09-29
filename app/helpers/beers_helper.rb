@@ -14,4 +14,13 @@ module BeersHelper
 		end
   		return ""
 	end
+
+	def get_style styleId
+		style = Style.find_by(styleId: styleId.to_s)
+		if (style != nil) then
+			return style.name
+		end
+		return ""
+	end
+	
 end

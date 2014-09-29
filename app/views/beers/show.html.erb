@@ -1,8 +1,24 @@
 <% provide(:title, 'Beer Details') %>
-<img src="<%= get_icon @beer.beerId %>" />
-Name: <a href="/beers/<%= @beer.beerId %>"><%= @beer.name %></a> <br />
-Style: <a href="/styles/<%= @beer.styleId.to_s %>"><%= @beer.style %></a> <br />
-Description: <%= @beer.description %> <br />
-ABV: <%= @beer.abv %>% <br />
-IBU: <%= @beer.ibu %> <br />
-<img src="<%= get_large_label @beer.beerId %>" />
+<div class='beer-body'>
+	<div class="beer-image" 
+	     style="background-image: url('<%= get_large_label @beer.beerId %>');">
+	    <img src="<%= get_large_label @beer.beerId %>" />
+	</div>
+	<ul>
+		<li>
+			<h3><img src="<%= get_icon @beer.beerId %>" /><a href="/beers/<%= @beer.beerId %>"><%= @beer.name %></a></h3> <br />
+		</li>
+		<li>
+			Style: <a href="/styles/<%= @beer.styleId.to_s %>"><%= @beer.style %></a> <br />
+		</li>
+		<li>
+			Description: <%= @beer.description %> <br />
+		</li>
+		<li>
+			ABV: <%= @beer.abv %>% <br />
+		</li>
+		<li>
+			IBU: <%= @beer.ibu %> <br />
+		</li>
+	</ul>
+</div>

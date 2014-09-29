@@ -5,6 +5,8 @@
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "angular" => true %>
+    <%= javascript_include_tag "application", "d3.v3" => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -12,7 +14,6 @@
     <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
       <%= render 'layouts/footer' %>
     </div>
   </body>
