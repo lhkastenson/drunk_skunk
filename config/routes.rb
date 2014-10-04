@@ -1,4 +1,6 @@
 DrunkSkunk::Application.routes.draw do
+  
+  devise_for :users
   get "styles/new"
   resources :beers, :styles
   root  'static_pages#home'
