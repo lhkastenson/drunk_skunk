@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe Style do
-	before { @style = Style.new(styleId: 1, name: "Classic English-Style Pale Ale", description: "Classic English pale ales are golden to copper colored and display earthy, herbal English-variety hop character. Note that \"earthy, herbal English-variety hop character\" is the perceived end, but may be a result of the skillful use of hops of other national origins. Medium to high hop bitterness, flavor, and aroma should be evident. This medium-bodied pale ale has low to medium malt flavor and aroma. Low caramel character is allowable. Fruity-ester flavors and aromas are moderate to strong. Chill haze may be in evidence only at very cold temperatures. The absence of diacetyl is desirable, though, diacetyl (butterscotch character) is acceptable and characteristic when at very low levels.", categoryId: 1, category: "British Origin Ales", ibuMin: 20, ibuMax: 40, abvMin: 4.5, abvMax: 5.5, srmMin: 5, srmMax: 5, ogMin: 1.04, ogMax: nil, fgMin: 1.008, fgMax: 1.016 )}
+	#before { @style = Style.new(styleId: 1, name: "Classic English-Style Pale Ale", description: "Classic English pale ales are golden to copper colored and display earthy, herbal English-variety hop character. Note that \"earthy, herbal English-variety hop character\" is the perceived end, but may be a result of the skillful use of hops of other national origins. Medium to high hop bitterness, flavor, and aroma should be evident. This medium-bodied pale ale has low to medium malt flavor and aroma. Low caramel character is allowable. Fruity-ester flavors and aromas are moderate to strong. Chill haze may be in evidence only at very cold temperatures. The absence of diacetyl is desirable, though, diacetyl (butterscotch character) is acceptable and characteristic when at very low levels.", categoryId: 1, category: "British Origin Ales", ibuMin: 20, ibuMax: 40, abvMin: 4.5, abvMax: 5.5, srmMin: 5, srmMax: 5, ogMin: 1.04, ogMax: nil, fgMin: 1.008, fgMax: 1.016 )}
+  let (:style) { FactoryGirl.create(:style) }
 
-	subject { @style }
+	subject { style }
 
 	it { should respond_to (:styleId) }
 	it { should respond_to (:name) }
@@ -24,22 +25,22 @@ describe Style do
 	it { should be_valid }
 
 	describe "when styleId is not present" do
-		before { @style.styleId = "" }
+		before { style.styleId = "" }
 		it { should_not be_valid }
 	end
 
 	describe "when name is not present" do
-		before { @style.name = "" }
+		before { style.name = "" }
 		it { should_not be_valid }
 	end
 
   describe "when name is too long" do
-  	before { @style.name = "a" * 51 }
+  	before { style.name = "a" * 51 }
   	it { should_not be_valid }
   end
 
 	describe "when categoryId is not present" do
-		before { @style.categoryId = nil }
+		before { style.categoryId = nil }
 		it { should_not be_valid }
 	end
 

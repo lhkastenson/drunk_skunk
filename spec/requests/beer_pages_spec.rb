@@ -1,16 +1,41 @@
 require 'spec_helper'
+include Warden::Test::Helpers
 
 describe "Beer pages" do
 
   subject { page }
 
   describe "new" do
-    before { visit create_beer_path }
+    let(:user) { FactoryGirl.create(:user) }
+    describe "user login" do
 
-    it { should have_title(full_title('New Beer')) }
-    it { should have_content('Name') }
-    it { should have_content('Style') }
-    it { should have_content('Description') }
+      before { visit create_beer_path }
+    
+      describe "page" do 
+        it { should have_title(full_title('Log In')) }
+        it { should have_content('Email') }
+        it { should have_content('Password') }
+        it { should have_content('Remember me') }
+        it { should have_submit_button('Log in')}
+      end
+    end
+    
+    describe "logged in user" do
+      before do
+        user = FactoryGirl.create(:user)
+        login_as(user, :scope => :user)
+      end
+
+      before { visit create_beer_path }
+      
+      describe "page" do
+        it { should have_title(full_title('New Beer')) }
+        it { should have_content('Name') }
+        it { should have_content('Style') }
+        it { should have_content('Description') }
+      end
+      User.delete_all
+    end
   end
 
   describe "show" do
@@ -20,7 +45,6 @@ describe "Beer pages" do
     
     describe "page" do
     	it { should have_title(full_title('Beer Details')) }
-    	it { should have_content('Name:') }
     	it { should have_content('Style:') }
     	it { should have_content('Description:') }
     	it { should have_content('ABV:') }
@@ -42,7 +66,7 @@ describe "Beer pages" do
     end
 
     describe "page" do
-      it { should have_title(full_title('All beers')) }
+      it { should have_title(full_title('All Beers')) }
       it { should have_content('Name:') }
       it { should have_content('Style:') }
       it { should have_content('Description:')}

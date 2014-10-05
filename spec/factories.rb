@@ -36,4 +36,11 @@ FactoryGirl.define do
     fgMin                      Random.rand(1.0..1.1)
     fgMax                      Random.rand(1.1..2.0)
   end
+
+  factory :user do
+    sequence(:email)           { |n| "user#{n}@email.com" }
+    sequence(:password)        { |n| "password#{n}" }
+    sequence(:password_confirmation) { |n| "password#{n}" }
+  end
+
 end
