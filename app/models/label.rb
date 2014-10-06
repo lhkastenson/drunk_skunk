@@ -1,3 +1,3 @@
 class Label < ActiveRecord::Base
-	  validates :beerId, presence: true
+	  validates :brewery_db_beer_id, presence: true
 end

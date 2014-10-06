@@ -7,7 +7,7 @@ describe "Styles pages" do
   describe "show" do
   	let (:style) { FactoryGirl.create(:style) }
 
-  	before { visit show_style_path(:id => style.styleId) }
+  	before { visit show_style_path(:id => style.brewery_db_style_id) }
 
   	describe "page" do
   		it { should have_title(full_title('Style Details')) }

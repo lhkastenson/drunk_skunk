@@ -1,4 +1,4 @@
 class Yeast < ActiveRecord::Base
 	validates :name, presence: true, length: { maximum: 50 }
-	validates :yeastId, presence: true
+	validates :brewery_db_yeast_id, presence: true
 end

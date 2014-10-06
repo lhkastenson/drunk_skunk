@@ -9,9 +9,9 @@
 #
 #Style.all.each do |style|
 #  $brewery_db.beers.all(styleId: style.styleId).each do |beer|
-#    Beer.create( beerId: beer.id, styleId: beer.styleId, style: beer.style.name, isOrganic: (beer.isOrganic == 'Y'), glasswareId: beer.glasswareId, status: beer.status, name: beer.name, description: beer.description, abv: beer.abv, ibu: beer.ibu, year: beer.year)
+#    Beer.create( brewery_db_beer_id: beer.id, styleId: beer.styleId, style: beer.style.name, isOrganic: (beer.isOrganic == 'Y'), glasswareId: beer.glasswareId, status: beer.status, name: beer.name, description: beer.description, abv: beer.abv, ibu: beer.ibu, year: beer.year)
 #    if (beer.labels != nil) then
-#      Label.create(beerId: beer.id, medium: beer.labels.medium, large: beer.labels.large, small: beer.labels.icon)
+#      Label.create(brewery_db_beer_id: beer.id, medium: beer.labels.medium, large: beer.labels.large, small: beer.labels.icon)
 #    end
 #  end
 #end
@@ -23,7 +23,7 @@
 #
 #Style.all.each do |style|
 #	$brewery_db.beers.all(styleId: style.styleId).each do |beer|
-#		label = Labels.new( beerId: beer.id )
+#		label = Labels.new( brewery_db_beer_id: beer.id )
 #
 #beer.each do |attr|
 #  if attr[0] == 'labels' then

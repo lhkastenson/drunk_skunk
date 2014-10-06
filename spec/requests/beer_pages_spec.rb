@@ -41,7 +41,7 @@ describe "Beer pages" do
   describe "show" do
     let (:beer) { FactoryGirl.create(:beer) }
     let (:style) { FactoryGirl.create(:style) }
-  	before { visit show_beer_path(:id => beer.beerId) }
+  	before { visit show_beer_path(:id => beer.brewery_db_beer_id) }
     
     describe "page" do
     	it { should have_title(full_title('Beer Details')) }

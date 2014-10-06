@@ -7,6 +7,6 @@ class StylesController < ApplicationController
   end
 
   def show 
-    @style = Style.find_by(styleId: params[:id])
+    @style = Style.find_by(brewery_db_style_id: params[:id])
   end
 end

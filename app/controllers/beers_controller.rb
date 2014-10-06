@@ -5,7 +5,7 @@ class BeersController < ApplicationController
   	@beer = Beer.new
   	@styleSelect = []
   	Style.all.each do |style| 
-  		@styleSelect.push([style.name, style.styleId])
+  		@styleSelect.push([style.name, style.brewery_db_style_id])
   	end
   end
 
@@ -28,12 +28,12 @@ class BeersController < ApplicationController
   end
 
   def show
-    @beer = Beer.find_by(beerId: params[:id])
-    @style = Style.find_by(styleId: @beer.styleId.to_s)
+    @beer = Beer.find_by(brewery_db_beer_id: params[:id])
+    @style = Style.find_by(brewery_db_style_id: @beer.brewery_db_style_id.to_s)
   end
 
   private
     def beer_params
-      params.require(:beer).permit(:name, :styleId)
+      params.require(:beer).permit(:name, :brewery_db_style_id)
     end
 end

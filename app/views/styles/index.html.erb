@@ -6,19 +6,19 @@
 <ul class="styles">
 	<%= @styles.each do |style| %>
 	<li>
-		Name: <a href="/styles/<%= style.styleId %>"><%= style.name %> </a> <br />
+		Name: <a href="/styles/<%= style.brewery_db_style_id %>"><%= style.name %> </a> <br />
 		Description: <%= style.description %> <br />
 		Category: <%= style.category %> <br />
-		ABV Min: <%= style.abvMin %>% <br />
-		ABV Max: <%= style.abvMax %>% <br />
-		IBU Min: <%= style.ibuMin %> <br />
-		IBU Max: <%= style.ibuMax %> <br />
-		SRM Min: <%= style.srmMin %> <br />
-		SRM Max: <%= style.srmMax %> <br />
-		Original Gravity Min: <%= style.ogMin %> <br />
-		Original Gravity Max: <%= style.ogMax %> <br />
-		Final Gravity Min: <%= style.fgMin %> <br />
-		Final Gravity Max: <%= style.fgMax %> <br />
+		ABV Min: <%= style.abv_min %>% <br />
+		ABV Max: <%= style.abv_max %>% <br />
+		IBU Min: <%= style.ibu_min %> <br />
+		IBU Max: <%= style.ibu_max %> <br />
+		SRM Min: <%= style.srm_min %> <br />
+		SRM Max: <%= style.srm_max %> <br />
+		Original Gravity Min: <%= style.og_min %> <br />
+		Original Gravity Max: <%= style.og_max %> <br />
+		Final Gravity Min: <%= style.fg_min %> <br />
+		Final Gravity Max: <%= style.fg_max %> <br />
 	</li>
 	<% end %>
 </ul>

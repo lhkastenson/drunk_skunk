@@ -1,39 +1,39 @@
 require 'spec_helper'
 
 describe Hop do
-  before { @hop = Hop.new(hopId: 66, name: "Hallertau Northern Brewer", description: "Originally developed in England (see Northern Brewe...", countryOfOrigin: "DE", alphaAcidMin: 7.0, alphaAcidMax: nil, betaAcidMin: 3.0, betaAcidMax: 5.0, humuleneMin: 25.0, humuleneMax: 31.0, caryophylleneMin: 8.0, caryophylleneMax: 12.0, cohumuloneMin: 27.0, cohumuloneMax: 33.0, myrceneMin: 30.0, myrceneMax: 35.0, farneseneMin: nil, farneseneMax: 0.1, isNoble: false, forBittering: false, forFlavor: false, forAroma: false, category: "hop", categoryDisplay: "Hops")}
+  before { @hop = Hop.new(brewery_db_hop_id: 66, name: "Hallertau Northern Brewer", description: "Originally developed in England (see Northern Brewe...", countryOf_origin: "DE", alpha_acid_min: 7.0, alpha_acid_max: nil, beta_acid_min: 3.0, beta_acid_max: 5.0, humulene_min: 25.0, humulene_max: 31.0, caryophyllene_min: 8.0, caryophyllene_max: 12.0, cohumulone_min: 27.0, cohumulone_max: 33.0, myrcene_min: 30.0, myrcene_max: 35.0, farnesene_min: nil, farnesene_max: 0.1, is_noble: false, for_bittering: false, for_flavor: false, for_aroma: false, category: "hop", category_display: "Hops")}
 
   subject { @hop }
 
-  it { should respond_to (:hopId) }
+  it { should respond_to (:brewery_db_hop_id) }
   it { should respond_to (:name) }
   it { should respond_to (:description) }
-  it { should respond_to (:countryOfOrigin) }
-  it { should respond_to (:alphaAcidMin) }
-  it { should respond_to (:alphaAcidMax) }
-  it { should respond_to (:betaAcidMin) }
-  it { should respond_to (:betaAcidMax) }
-  it { should respond_to (:humuleneMin) }
-  it { should respond_to (:humuleneMax) }
-  it { should respond_to (:caryophylleneMin) }
-  it { should respond_to (:caryophylleneMax) }
-  it { should respond_to (:cohumuloneMin) }
-  it { should respond_to (:cohumuloneMax) }
-  it { should respond_to (:myrceneMin) }
-  it { should respond_to (:myrceneMax) }
-  it { should respond_to (:farneseneMin) }
-  it { should respond_to (:farneseneMax) }
-  it { should respond_to (:isNoble) }
-  it { should respond_to (:forBittering) }
-  it { should respond_to (:forFlavor) }
-  it { should respond_to (:forAroma) }
+  it { should respond_to (:country_of_origin) }
+  it { should respond_to (:alpha_acid_min) }
+  it { should respond_to (:alpha_acid_max) }
+  it { should respond_to (:beta_acid_min) }
+  it { should respond_to (:beta_acid_max) }
+  it { should respond_to (:humulene_min) }
+  it { should respond_to (:humulene_max) }
+  it { should respond_to (:caryophyllene_min) }
+  it { should respond_to (:caryophyllene_max) }
+  it { should respond_to (:cohumulone_min) }
+  it { should respond_to (:cohumulone_max) }
+  it { should respond_to (:myrcene_min) }
+  it { should respond_to (:myrcene_max) }
+  it { should respond_to (:farnesene_min) }
+  it { should respond_to (:farnesene_max) }
+  it { should respond_to (:is_noble) }
+  it { should respond_to (:for_bittering) }
+  it { should respond_to (:for_flavor) }
+  it { should respond_to (:for_aroma) }
   it { should respond_to (:category) }
-  it { should respond_to (:categoryDisplay) }
+  it { should respond_to (:category_display) }
 
   it { should be_valid }
 
-  describe "when hopId is not present" do
-  	before { @hop.hopId = nil }
+  describe "when hop_id is not present" do
+  	before { @hop.brewery_db_hop_id = nil }
   	it { should_not be_valid }
   end
 

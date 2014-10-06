@@ -1,31 +1,30 @@
 require 'spec_helper'
 
 describe Style do
-	#before { @style = Style.new(styleId: 1, name: "Classic English-Style Pale Ale", description: "Classic English pale ales are golden to copper colored and display earthy, herbal English-variety hop character. Note that \"earthy, herbal English-variety hop character\" is the perceived end, but may be a result of the skillful use of hops of other national origins. Medium to high hop bitterness, flavor, and aroma should be evident. This medium-bodied pale ale has low to medium malt flavor and aroma. Low caramel character is allowable. Fruity-ester flavors and aromas are moderate to strong. Chill haze may be in evidence only at very cold temperatures. The absence of diacetyl is desirable, though, diacetyl (butterscotch character) is acceptable and characteristic when at very low levels.", categoryId: 1, category: "British Origin Ales", ibuMin: 20, ibuMax: 40, abvMin: 4.5, abvMax: 5.5, srmMin: 5, srmMax: 5, ogMin: 1.04, ogMax: nil, fgMin: 1.008, fgMax: 1.016 )}
   let (:style) { FactoryGirl.create(:style) }
 
 	subject { style }
 
-	it { should respond_to (:styleId) }
+	it { should respond_to (:brewery_db_style_id) }
 	it { should respond_to (:name) }
 	it { should respond_to (:description) }
-	it { should respond_to (:categoryId) }
+	it { should respond_to (:brewery_db_category_id) }
 	it { should respond_to (:category) }
-	it { should respond_to (:ibuMin) }
-	it { should respond_to (:ibuMax) }
-	it { should respond_to (:abvMin) }
-	it { should respond_to (:abvMax) }
-	it { should respond_to (:srmMin) }
-	it { should respond_to (:srmMax) }
-	it { should respond_to (:ogMin) }
-	it { should respond_to (:ogMax) }
-	it { should respond_to (:fgMin) }
-	it { should respond_to (:fgMax) }
+	it { should respond_to (:ibu_min) }
+	it { should respond_to (:ibu_max) }
+	it { should respond_to (:abv_min) }
+	it { should respond_to (:abv_max) }
+	it { should respond_to (:srm_min) }
+	it { should respond_to (:srm_max) }
+	it { should respond_to (:og_min) }
+	it { should respond_to (:og_max) }
+	it { should respond_to (:fg_min) }
+	it { should respond_to (:fg_max) }
 
 	it { should be_valid }
 
-	describe "when styleId is not present" do
-		before { style.styleId = "" }
+	describe "when style_id is not present" do
+		before { style.brewery_db_style_id = "" }
 		it { should_not be_valid }
 	end
 
@@ -39,8 +38,8 @@ describe Style do
   	it { should_not be_valid }
   end
 
-	describe "when categoryId is not present" do
-		before { style.categoryId = nil }
+	describe "when category_id is not present" do
+		before { style.brewery_db_category_id = nil }
 		it { should_not be_valid }
 	end
 
