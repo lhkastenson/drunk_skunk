@@ -10,7 +10,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'brewery_db'
-gem 'therubyracer'
+gem 'therubyracer', '0.11.3', platforms: :ruby
 gem 'd3-rails'
 gem 'devise'
 
