@@ -28,7 +28,7 @@ class BeersController < ApplicationController
   end
 
   def show
-    @beer = Beer.find_by(brewery_db_beer_id: params[:id])
+    @beer = Beer.find_by(brewery_db_beer_id: params[:id]) or not_found
     @style = Style.find_by(brewery_db_style_id: @beer.brewery_db_style_id.to_s)
   end
 

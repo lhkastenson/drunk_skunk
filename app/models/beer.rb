@@ -6,6 +6,6 @@ class Beer < ActiveRecord::Base
 	validates :ibu, :numericality => {:greater_than => 0}, :allow_nil => true
 	validates :abv, :numericality => {:greater_than => 0, :less_than => 100}, :allow_nil => true
 	validates :original_gravity, :numericality => {:greater_than => 0}, :allow_nil => true
-
+	
 	belongs_to :user
 end

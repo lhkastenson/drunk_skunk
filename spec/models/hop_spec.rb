@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Hop do
-  before { @hop = Hop.new(brewery_db_hop_id: 66, name: "Hallertau Northern Brewer", description: "Originally developed in England (see Northern Brewe...", countryOf_origin: "DE", alpha_acid_min: 7.0, alpha_acid_max: nil, beta_acid_min: 3.0, beta_acid_max: 5.0, humulene_min: 25.0, humulene_max: 31.0, caryophyllene_min: 8.0, caryophyllene_max: 12.0, cohumulone_min: 27.0, cohumulone_max: 33.0, myrcene_min: 30.0, myrcene_max: 35.0, farnesene_min: nil, farnesene_max: 0.1, is_noble: false, for_bittering: false, for_flavor: false, for_aroma: false, category: "hop", category_display: "Hops")}
+  let (:hop) { FactoryGirl.create(:hop) }
 
-  subject { @hop }
+  subject { hop }
 
   it { should respond_to (:brewery_db_hop_id) }
   it { should respond_to (:name) }
@@ -33,17 +33,17 @@ describe Hop do
   it { should be_valid }
 
   describe "when hop_id is not present" do
-  	before { @hop.brewery_db_hop_id = nil }
+  	before { hop.brewery_db_hop_id = nil }
   	it { should_not be_valid }
   end
 
   describe "when name is not present" do
-  	before { @hop.name = "" }
+  	before { hop.name = "" }
   	it { should_not be_valid }
   end
 
   describe "when name is too long" do
-  	before { @hop.name = "a" * 51 }
+  	before { hop.name = "a" * 51 }
   	it { should_not be_valid }
   end
 

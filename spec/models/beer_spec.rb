@@ -16,7 +16,7 @@ describe Beer do
   it { should respond_to (:description) }
   it { should respond_to (:food_pairings) }
   it { should respond_to (:original_gravity) }
-  it { should respond_to (:glassware_id) }
+  it { should respond_to (:brewery_db_glassware_id) }
   it { should respond_to (:is_organic) }
   it { should respond_to (:serving_temperature) }
   it { should respond_to (:status) }

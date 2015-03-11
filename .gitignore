@@ -1,10 +1,11 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
+# Ignore the default SQLite/Postgres database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /db/database.yml
+/config/database.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -20,3 +21,4 @@ doc/
 bundler_stubs/
 .secret
 .brewery_db_api
+db_stuff.txt
