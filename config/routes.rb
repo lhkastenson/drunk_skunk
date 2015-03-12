@@ -1,7 +1,7 @@
 DrunkSkunk::Application.routes.draw do
-  get "/404", :to => 'application#not_found'
-  get "/422", :to => "errors#error_404"
-  get "/500", :to => "errors#error_500"
+  get '/404', :to => redirect('404.html'), :status => 404
+  get '/422', :to => redirect('422.html'), :status => 422
+  get '/500', :to => redirect('500.html'), :status => 500
   devise_for :users
   get "styles/new"
   resources :beers, :styles
