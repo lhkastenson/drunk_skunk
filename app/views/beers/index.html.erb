@@ -7,7 +7,7 @@
   <% @beers.each do |beer| %>
     <li>
     	<img src="<%= get_icon beer.brewery_db_beer_id %>" />
-    	Name: <a href="/beers/<%= beer.brewery_db_beer_id %>"><%= beer.name %> </a> <br />
+    	Name: <a href="/beers/<%= beer.id %>"><%= beer.name %> </a> <br />
 			Style: <a href="/styles/<%= beer.brewery_db_style_id.to_s %>"><%= beer.style %> </a> <br />
 			Description: <%= beer.description %> <br />
 			ABV: <%= beer.abv %>% <br />

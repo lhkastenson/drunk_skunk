@@ -10,15 +10,16 @@ class BeersController < ApplicationController
   end
 
   def create
-    @beer = current_user.Beer.new(beer_params)
-
+    @beer = Beer.new(beer_params) if user_signed_in?
+    @beer.user_id = current_user.id
+    @beer.style = Style.find_by(brewery_db_style_id: @beer.brewery_db_style_id.to_s).name
     respond_to do |format|
       if @beer.save
-        format_html { redirect_to @beer, notice: "Beer was successfully created." }
-        format_json { render action: 'show', staus: :created, location: @beer }
+        format.html { redirect_to @beer, notice: "Beer was successfully created." }
+        format.json { render :show, staus: :created, location: @beer }
       else
-        format_html { render action: 'new' }
-        format_json { render json: @beer.errors, status: :unprocessable_entity }
+        format.html { render :new }
+        format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -28,12 +29,12 @@ class BeersController < ApplicationController
   end
 
   def show
-    @beer = Beer.find_by(brewery_db_beer_id: params[:id]) or not_found
+    @beer = Beer.find_by(id: params[:id])
     @style = Style.find_by(brewery_db_style_id: @beer.brewery_db_style_id.to_s)
   end
 
   private
     def beer_params
-      params.require(:beer).permit(:name, :brewery_db_style_id)
+      params.require(:beer).permit(:name, :brewery_db_style_id, :description, :abv)
     end
 end

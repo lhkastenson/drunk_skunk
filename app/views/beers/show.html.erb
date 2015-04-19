@@ -6,7 +6,7 @@
 	</div>
 	<ul>
 		<li>
-			<h3><img src="<%= get_icon @beer.brewery_db_beer_id %>" /><a href="/beers/<%= @beer.brewery_db_beer_id %>"><%= @beer.name %></a></h3> <br />
+			<h3><img src="<%= get_icon @beer.brewery_db_beer_id %>" /><a href="/beers/<%= @beer.id %>"><%= @beer.name %></a></h3> <br />
 		</li>
 		<li>
 			Style: <a href="/styles/<%= @beer.brewery_db_style_id.to_s %>"><%= @beer.style %></a> <br />
