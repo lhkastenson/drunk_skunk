@@ -3,18 +3,22 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@beer) do |f| %>
-
+      <p>Required information:</p>
       <%= f.label :name %>
       <%= f.text_field :name %>
 
       <%= f.label :style %>
       <%= f.select :brewery_db_style_id, @styleSelect %>
-
+      
+      <p>Optional:</p>
       <%= f.label :description %>
       <%= f.text_field :description %>
 
       <%= f.label :abv, "ABV (%)" %>
       <%= f.text_field :abv %>
+
+      <%= f.label :ibu, "IBU" %>
+      <%= f.text_field :ibu %>
 
       <%= f.submit "Create my beer", class: "btn btn-large btn-primary" %>
     <% end %>
